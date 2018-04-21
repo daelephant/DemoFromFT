@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/jquery"></script>
+<input type="text" placeHolder="请输入发送的消息"/>
+<button onclick="send_notice($('input').val())">
+    点我发送消息
+</button>
+<script>
+    function send_notice(content){
+        let dataObject = {
+            sendkey:"3370-3be86b633c9d0b0c56d0a2b7d3220a01",
+            text:content
+        };
+        $.post("https://pushbear.ftqq.com/sub",dataObject,function(data){
+            console.log(data);
+        });
+    }
+</script>
